@@ -4,14 +4,15 @@ from flask_login import LoginManager, UserMixin
 
 db = SQLAlchemy()
 
+
 def create_app():
     app = Flask(__name__)
 
     app.config['SECRET_KEY'] = '\xe9b\xf3-\x81\xc7)9(\x02pG\x9b\x98\x0ed'
-    
-    #Reference :: https://stackabuse.com/using-sqlalchemy-with-flask-and-postgresql/
 
-    app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:postgres@localhost:5432/flaskdb"
+    # Reference :: https://stackabuse.com/using-sqlalchemy-with-flask-and-postgresql/
+
+    app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://tbfqkeix:UFgWc4ZFb5pX1iO_8OWvVt6fbRCii7sS@ruby.db.elephantsql.com/tbfqkeix"
     db.init_app(app)
     login_manager = LoginManager()
     login_manager.login_view = 'auth.login'
